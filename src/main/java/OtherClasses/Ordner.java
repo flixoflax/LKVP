@@ -5,7 +5,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 
-public class Ordner implements Strukturobjekt{
+public class Ordner extends Strukturobjekt {
     private String titel = null;
     private Date erstelldatum = null;
     private int kartensammlungsanzahl;
@@ -14,13 +14,8 @@ public class Ordner implements Strukturobjekt{
 
 
     public Ordner(String titel) {
-        this.titel = titel;
-        //Datum ermitteln, nachher besser outsourcen -- Idee abstrakte Klasse anstelle der Interfaces ... als getDate Methode auslagern
-        SimpleDateFormat dtf = new SimpleDateFormat("yyyy/MM/dd");
-        Calendar calendar = Calendar.getInstance();
-        Date heute = calendar.getTime();
-        //Datum & Kartensammlungsanzahl zuweisen
-        this.erstelldatum = heute;
+        super.titel = titel;
+        this.erstelldatum = getHeute();
         this.kartensammlungsanzahl = 0;
     }
 
@@ -33,7 +28,7 @@ public class Ordner implements Strukturobjekt{
         String instanzTitel = "placeholder";
 
 
-        //Konstruktor-Aufruf --> wie weis man den Inhalt der Variable automatisch dem Objektnamen zu?
+        //Konstruktor-Aufruf --> wie weist man den Inhalt der Variable automatisch dem Objektnamen zu?
         Ordner placeholder = new Ordner(instanzTitel);
 
 
@@ -43,6 +38,20 @@ public class Ordner implements Strukturobjekt{
 
     @Override
     public void loeschen() {
+
+        //Input ------Frontend implementieren------
+        //Kommunikation GUI
+        // Abfrage welcher Ordner
+
+
+        // Verarbeitung ------ Backend implementieren------
+        //Konstruktor-Aufruf --> wie weist man den Inhalt der Variable automatisch dem Objektnamen zu?
+        //AusgewählterOrdner = 0;
+        // System.gc(); Garbage collection direkt aufrufen oder lieber sein lassen?
+
+
+
+        //Bestätigung ------Frontend implementieren------
 
     }
 

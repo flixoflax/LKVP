@@ -2,9 +2,8 @@ package OtherClasses;
 
 import java.util.Date;
 
-public class Karte implements KartenStrukturobjekt{
-    private String titel = null;
-    private Date erstelldatum = null;
+public class Karte extends Strukturobjekt {
+
     private String modul = null;
     private String ersteller = null;
     private boolean kannIch;
@@ -15,8 +14,8 @@ public class Karte implements KartenStrukturobjekt{
 
 
     public Karte(String titel, Date erstelldatum, String modul, String ersteller, String vorderseite, String rueckseite) {
-        this.titel = titel;
-        this.erstelldatum = erstelldatum;
+        super.titel = titel;
+        super.erstelldatum = getHeute();
         this.modul = modul;
         this.ersteller = ersteller;
         this.kannIch = false;
@@ -26,12 +25,36 @@ public class Karte implements KartenStrukturobjekt{
 
     @Override
     public void erstellen() {
-        //
+        //Input ------Frontend implementieren------
+        //Kommunikation GUI
+        // Abfrage Titel -
+        String instanzTitel = "placeholder";
+
+        // Verarbeitung ------ Backend implementieren------
+        //Konstruktor-Aufruf --> wie weis man den Inhalt der Variable automatisch dem Objektnamen zu?
+        Ordner placeholder = new Ordner(instanzTitel);
+
+
+        //Bestätigung ------Frontend implementieren------
     }
 
     @Override
     public void loeschen() {
-        //
+
+        // Input ------Frontend implementieren------
+        // Kommunikation GUI
+        // Abfrage welche Karte
+
+
+
+        // Verarbeitung ------ Backend implementieren------
+        // AusgewählteKarte = 0;
+        // System.gc(); Garbage collection direkt aufrufen oder lieber sein lassen?
+
+
+
+        // Bestätigung ------Frontend implementieren------
+
     }
 
     @Override
